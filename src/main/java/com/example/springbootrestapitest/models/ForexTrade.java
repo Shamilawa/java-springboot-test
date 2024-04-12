@@ -12,7 +12,6 @@ public class ForexTrade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long tradeId;
-
     private String symbol;
     private String tradeType;
     private BigDecimal volume;
@@ -22,13 +21,17 @@ public class ForexTrade {
     private LocalDateTime exitTime;
     private BigDecimal profitLoss;
     private String notes;
+    private String entryScreenshotUrl;
+    private String exitScreenshotUrl;
 
     public ForexTrade() {
         // Default constructor
     }
 
     // Constructor without tradeId for convenience
-    public ForexTrade(Long tradeId, String symbol, String tradeType, BigDecimal volume, BigDecimal entryPrice, LocalDateTime entryTime, BigDecimal exitPrice, LocalDateTime exitTime, BigDecimal profitLoss, String notes) {
+    public ForexTrade(Long tradeId, String symbol, String tradeType, BigDecimal volume, BigDecimal entryPrice,
+            LocalDateTime entryTime, BigDecimal exitPrice, LocalDateTime exitTime, BigDecimal profitLoss,
+            String notes) {
         this.tradeId = tradeId;
         this.symbol = symbol;
         this.tradeType = tradeType;
@@ -120,5 +123,21 @@ public class ForexTrade {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public String getEntryScreenshotUrl() {
+        return entryScreenshotUrl;
+    }
+
+    public void setEntryScreenshotUrl(String entryScreenshotUrl) {
+        this.entryScreenshotUrl = entryScreenshotUrl;
+    }
+
+    public String getExitScreenshotUrl() {
+        return exitScreenshotUrl;
+    }
+
+    public void setExitScreenshotUrl(String exitScreenshotUrl) {
+        this.exitScreenshotUrl = exitScreenshotUrl;
     }
 }
